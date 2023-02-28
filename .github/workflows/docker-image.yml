@@ -13,7 +13,7 @@ on:
 jobs:
   push_to_registries:
     if: github.repository == 'lujiajing1126/docker-elasticsearch-alpine'
-    name: Push Docker image to multiple registries
+    name: Build ES Docker Image
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [6.2.4, 6.3.2, 6.4.3, 6.5.4, 6.6.2, 6.7.2, 6.8.23, 7.0.1, 7.1.1, 7.2.1, 7.3.2, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 7.10, 7.15, 7.16, 7.17]
+        version: [6.2.4, 6.3.2, 6.4.3, 6.5.4, 6.6.2, 6.7.2, 6.8.23, 7.0.1, 7.1.1, 7.2.1, 7.3.2, 7.4.2, 7.5.2, 7.6.2, 7.7.1, 7.8.1, 7.9.3, 7.10.2, 7.15.2, 7.16.3, 7.17.2]
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
