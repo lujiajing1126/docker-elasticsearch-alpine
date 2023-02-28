@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.17
 
 LABEL maintainer "https://github.com/blacktop"
 
@@ -14,7 +14,7 @@ ENV GPG_KEY "46095ACC8548582C1A2699A9D27D666CD88E42B4"
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm \
   PATH=/usr/lib/jvm/default-jvm/bin:$PATH
 #  https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-6.3.0.zip
-RUN apk add --no-cache -t .build-deps wget ca-certificates gnupg openssl \
+RUN apk add --no-cache -t .build-deps wget curl ca-certificates gnupg openssl \
   && set -ex \
   && cd /tmp \
   && echo "===> Install Elasticsearch..." \

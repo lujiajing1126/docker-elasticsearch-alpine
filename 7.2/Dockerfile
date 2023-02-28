@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.17
 
 LABEL maintainer "https://github.com/blacktop"
 
@@ -12,7 +12,7 @@ ENV EXPECTED_SHA_URL "${DOWNLOAD_URL}/elasticsearch-oss-${VERSION}-no-jdk-linux-
 ENV ES_TARBALL_SHA "694aca59cc3e23bfcf41142d7bf3d3c75f6fcdb6d0a1b35157157cb2f4ac8152db1e424951e62ba1a2bd4a2d32a77bb9499085558b7e1580680c0de90fbc0902"
 ENV GPG_KEY "46095ACC8548582C1A2699A9D27D666CD88E42B4"
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash curl
 RUN apk add --no-cache -t .build-deps wget ca-certificates gnupg openssl \
   && set -ex \
   && cd /tmp \
