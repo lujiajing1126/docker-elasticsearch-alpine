@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v4
         timeout-minutes: 20
         with:
-          context: ./${{ DOCKER_DIR }}
+          context: ./${{ env.DOCKER_DIR }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ghcr.io/lujiajing1126/elasticsearch:${{ matrix.version }}
