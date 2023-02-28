@@ -39,7 +39,6 @@ jobs:
       - name: Set context dir
         run: echo "DOCKER_DIR=$(echo ${{ matrix.version }} | cut -d. -f1-2)" >> $GITHUB_ENV
       - name: Build and push Docker image
-        id: docker_build_${{ matrix.version }}
         uses: docker/build-push-action@v4
         timeout-minutes: 20
         with:
